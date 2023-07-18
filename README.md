@@ -1,14 +1,45 @@
-# Project
+# Introduction to Building Intelligent Apps
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This repository introduces and helps organizations get started with building Intelligent Apps and incorporating Large Language Models (LLMs) into them.
 
-As the maintainer of this project, please make a few updates:
+## Workshop Agenda
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+### 🌅 Morning (9:00 – 12:15)
+
+> *Focus: Introduction, First Steps & Prompt Engineering*
+
+* 📣 Intro (30min)
+  * Introductions & Setting Expectations
+  * Use Case Ideation & Brainstorming
+* 📣 [Intro to Azure OpenAI, Prompt Engineering & Demos (105min)](presentations/README.md)
+  * Azure OpenAI Service
+  * Demo(s)
+  * Break
+  * 🧑🏼‍💻 [Lab #1 - Hands-on with Prompt Engineering Exercises](labs/01-prompts/README.md)
+* 📣 [Intro to AI Orchestration (60min)](presentations/README.md)
+  * AI Orchestration
+  * Demo(s)
+
+### 🌆 Afternoon (1:15 – 4:30)
+
+> *Focus: Building Intelligent Apps & Incorporating LLMs*
+
+* 📣 [Intro to AI Orchestration Continued (135min)](presentations/README.md)
+  * 💻 [Lab #2 - Hands-on with Integrating AI Exercises](labs/02-integrating-ai/README.md)
+  * 💻 [Lab #3 - Hands-on with AI Orchestration Exercises](labs/03-orchestration/README.md)
+  * 💻 [Lab #4 - Hands-on with Deploying AI Exercises](labs/04-deploy-ai/README.md)
+  * Break
+* Wrapping-up (60min)
+  * Use Case Validation
+  * QnA & Closing Remarks
+
+## Next Steps
+
+* [Next Steps](docs/next_steps.md)
+
+## Preparation
+
+* [Preparation](labs/00-setup/README.md)
 
 ## Contributing
 

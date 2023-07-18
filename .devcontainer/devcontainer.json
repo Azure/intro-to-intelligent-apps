@@ -1,0 +1,59 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/dotnet
+{
+	"name": "Intelligent Apps Dev Container",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "devmachine",
+	"workspaceFolder": "/workspace",
+	"shutdownAction": "stopCompose",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {	
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"ms-dotnettools.csharp",
+                "ms-dotnettools.dotnet-interactive-vscode",              
+				"ms-azuretools.vscode-bicep",
+                "ms-azuretools.azure-dev",
+				"ms-python.python",
+				"ms-toolsai.jupyter",
+				"ms-semantic-kernel.semantic-kernel",
+                "esbenp.prettier-vscode",
+				"GitHub.copilot",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [5000, 5001],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "dotnet --version",
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+
+	// Additional devcontainer feature configurations
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"version": "latest",
+			"moby": true
+		},
+		"ghcr.io/devcontainers/features/git:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/azure-cli:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "3.11",
+            "installJupyterlab": true
+		},
+        "ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {
+            "version": "latest"
+        }
+	}
+}
