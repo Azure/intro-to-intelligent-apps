@@ -10,5 +10,5 @@ The first two in the list are focused on the API structure and how to interact w
 
 * [1) Azure OpenAI API](01-AzureOpenAIAPI/azureopenaiapi.md)
 * [2) OpenAI Packages/Libraries](02-OpenAIPackages/openai.md)
-* [3) Langchain](03-LangChain/langchain.md)
+* [3) Langchain](03-Langchain/langchain.md)
 * [4) Semantic Kernel](04-SemanticKernel/semantickernel.md)
