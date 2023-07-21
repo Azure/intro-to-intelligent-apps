@@ -5,3 +5,4 @@ In the previous sections, we've learned about Prompt Engineering and we've learn
 * [1) Tokens](01-Tokens/tokens.ipynb)
 * [2) Embeddings](02-Embeddings/embeddings.ipynb)
 * [3) Memories](03-Memories/memories.ipynb)
+* [4) Qdrant](04-Memories/langchainwithdata.ipynb)
