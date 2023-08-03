@@ -34,7 +34,8 @@ You can see above that we have a *completions* model `gpt-35-turbo` and an *embe
 
 Make a note of both the deployment name and the model name for each of the two deployments.
 
-5. Finally, we need to update a configuration file in this repo so that the labs are able to make use of your Azure OpenAI service. In the root of this repository, you will see a file named `env.example`. Make a copy of this file in the same location (the root of the repository) and rename the file to `.env` (don't forget the period at the beginning of the filename!)
+## Environment Configuration
+We need to update a configuration file in this repo so that the labs are able to make use of your Azure OpenAI service. In the root of this repository, you will see a file named `env.example`. Make a copy of this file in the same location (the root of the repository) and rename the file to `.env` (don't forget the period at the beginning of the filename!)
 
 Here's a detailed list of what you need to enter into the `.env` file and where to find the information you need to supply.
 
@@ -96,6 +97,6 @@ The final value is the name of the deployment for the embeddings model and can b
 AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME = "embedding"
 ```
 
-6. With all of the above updates to the `.env` file made, make sure you save the file and then you are ready to start the labs.
+With all of the above updates to the `.env` file made, make sure you save the file and then you are ready to start the labs.
 
 **NOTE**: The `.gitignore` file in this repo is configured to ignore the `.env` file, so the secrets such as the API key will not be uploaded to a public repo.

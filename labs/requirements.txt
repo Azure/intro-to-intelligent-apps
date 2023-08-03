@@ -1,3 +1,5 @@
 openai
 tiktoken
 langchain
+python-dotenv
+requests
