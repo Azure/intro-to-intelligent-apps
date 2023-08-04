@@ -33,13 +33,14 @@ This repository introduces and helps organizations get started with building Int
   * Use Case Validation
   * QnA & Closing Remarks
 
-## Next Steps
-
-* [Next Steps](docs/next_steps.md)
 
 ## Preparation
-
+The steps in this section will take you through setting up Azure OpenAI and some configuration files so that you can complete the hands-on labs successfully.
 * [Preparation](labs/00-setup/README.md)
+
+## Next Steps
+When you're done with this workshop and ready to move on, the following may be useful.
+* [Next Steps](docs/next_steps.md)
 
 ## Contributing
 
