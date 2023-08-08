@@ -3,3 +3,7 @@ tiktoken
 langchain
 python-dotenv
 requests
+unstructured
+markdown
+qdrant-client
+chromadb
