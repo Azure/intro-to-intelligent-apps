@@ -7,3 +7,4 @@ unstructured
 markdown
 qdrant-client
 chromadb
+azure-identity

@@ -39,13 +39,15 @@ We need to update a configuration file in this repo so that the labs are able to
 
 Here's a detailed list of what you need to enter into the `.env` file and where to find the information you need to supply.
 
-The first item `OPENAI_API_TYPE` is always set to `azure`. 
+The first item `OPENAI_API_TYPE` can be set to one of two values, depending on how you plan to authenticate to the Azure OpenAI service. To use an API key, set this to `azure`. To use Azure AD authentication, set this to `azure_ad`.
 
 ```
 OPENAI_API_TYPE = "azure"
 ```
 
-The `OPENAI_API_KEY` is the **Key 1** value you found on the **Develop** tab of the **Overview** page for the **Azure OpenAI Service** in the Azure portal.
+If you're using Azure AD authentication, the `OPENAI_API_KEY` value can be left empty. It will be populated with an Azure AD token at runtime.
+
+If you're using API keys, the `OPENAI_API_KEY` is the **Key 1** value you found on the **Develop** tab of the **Overview** page for the **Azure OpenAI Service** in the Azure portal.
 
 ![Alt text](images/key-1-value.png)
 
