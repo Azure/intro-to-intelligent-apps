@@ -6,7 +6,10 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 
 # Load environment variables
-load_dotenv()
+if load_dotenv():
+    print("Found OpenAPI Base Endpoint: " + os.getenv("OPENAI_API_BASE"))
+else: 
+    print("No file .env found")
 
 # Configure OpenAI API
 openai_api_type = os.getenv("OPENAI_TYPE")
