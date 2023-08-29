@@ -1,6 +1,6 @@
-# Introduction to Building Intelligent Apps
+# Introduction to Building AI Apps
 
-This repository introduces and helps organizations get started with building Intelligent Apps and incorporating Large Language Models (LLMs) into them.
+This repository introduces and helps organizations get started with building AI Apps and incorporating Large Language Models (LLMs) into them.
 
 ## Workshop Agenda
 
@@ -22,7 +22,7 @@ This repository introduces and helps organizations get started with building Int
 
 ### 🌆 Afternoon (1:15 – 4:30)
 
-> *Focus: Building Intelligent Apps & Incorporating LLMs*
+> *Focus: Building AI Apps & Incorporating LLMs*
 
 * 📣 [Intro to AI Orchestration Continued (135min)](presentations/README.md)
   * 💻 [Lab #2 - Hands-on with Integrating AI Exercises](labs/02-integrating-ai/README.md)
@@ -34,12 +34,16 @@ This repository introduces and helps organizations get started with building Int
   * QnA & Closing Remarks
 
 
-## Preparation
-The steps in this section will take you through setting up Azure OpenAI and some configuration files so that you can complete the hands-on labs successfully.
+## Getting Started with Workshop Preparation
+
+The steps in this section will take you through setting up Azure OpenAI and some configuration files so that you can complete all of the hands-on labs successfully.
+
 * [Preparation](labs/00-setup/README.md)
 
-## Next Steps
+## Post Workshop Next Steps
+
 When you're done with this workshop and ready to move on, the following may be useful.
+
 * [Next Steps](docs/next_steps.md)
 
 ## Contributing
