@@ -16,20 +16,14 @@ In this lab, we'll walk through the basics of Tokens, how they relate to LLMs, a
 
 In this lab, we'll walk through the basics of creating Vectors using Embeddings and why they are important when it comes to AI Orchestration.
 
-## 03-Memories
+## 03-Qdrant
 
-[Memories](03-Memories/memories.ipynb)
-
-In this lab, we'll walk through the basics of Memories and how they can be used to add additional context to Prompts without blowing them up. You will also learn how Memories can be used to enhance a Chat conversation by adding history.
-
-## 04-Qdrant
-
-[Qdrant](04-Qdrant/langchainwithdata.ipynb)
+[Qdrant](03-Qdrant/qdrant.ipynb)
 
 In this lab, we'll walk through using an open source vector store called Qdrant.
 
-## 05-ACS
+## 04-ACS
 
-[Azure Cognitive Search](05-ACS/langchainwithacs.ipynb)
+[Azure Cognitive Search](04-ACS/acs.ipynb)
 
-In this lab, we'll walk through using one of Azure's vector stores, this one is called **Azure Cognitive Search**.
+In this lab, we'll walk through using one of Azure's vector stores, **Azure Cognitive Search**.
