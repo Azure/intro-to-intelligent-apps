@@ -192,3 +192,7 @@ ___
   * Table: orders // Columns: order_id, customer_id, product_id, product_amount
   * Table: products // Columns: product_id, price, name, description
 * Expected completion: a query that returns the top 10 orders and show the customer name
+
+## Next Section
+
+📣 [Integrating AI](../02-integrating-ai/README.md)

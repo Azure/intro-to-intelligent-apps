@@ -32,7 +32,7 @@ On the **Develop** page you will see values for **Key 1**, **Key 2**, **Location
 
 You can see above that we have a *completions* model `gpt-35-turbo` and an *embeddings* model `text-embedding-ada-002`. If you have both of these, then you're good to go. If not, click on the **+ Create new deployment** link and follow the steps to create two deployments. Ensure that one model deployment uses `text-embedding-ada-002` and the other uses a completions model such as `gpt-35-turbo`.
 
-Make a note of both the deployment name and the model name for each of the two deployments.
+Make a note of both the **deployment name** and the **model name** for each of the two deployments.
 
 ## Environment Configuration
 We need to update a configuration file in this repo so that the labs are able to make use of your Azure OpenAI service. In the root of this repository, you will see a file named `env.example`. Make a copy of this file in the same location (the root of the repository) and rename the file to `.env` (don't forget the period at the beginning of the filename!)
@@ -68,7 +68,7 @@ OPENAI_API_BASE = "https://my-openaiservice.openai.azure.com/"
 The `OPENAI_API_VERSION` is used for the Azure OpenAI API to determine which version of the API to use. The value below should be fine, but you can view available versions of the API at the following link: https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#rest-api-versioning
 
 ```
-OPENAI_API_VERSION = "2023-03-15-preview"
+OPENAI_API_VERSION = "2023-05-15"
 ```
 
 The next sections all relate to the models you have deployed in the Azure OpenAI service.
@@ -102,3 +102,9 @@ AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME = "embedding"
 With all of the above updates to the `.env` file made, make sure you save the file and then you are ready to start the labs.
 
 **NOTE**: The `.gitignore` file in this repo is configured to ignore the `.env` file, so the secrets such as the API key will not be uploaded to a public repo.
+
+___
+
+## Next Section
+
+📣 [Prompts](../01-prompts/README.md)

@@ -1,4 +1,4 @@
-# Prompts
+# Prompts Demos
 
 In this document you will find demos for the "Intro to Azure OpenAI, Prompt Engineering & Demos" morning session. The demos are aimed at showing how certain prompts can be made better by following recommended prompt engineering practices.
 
