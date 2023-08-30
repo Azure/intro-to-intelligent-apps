@@ -12,11 +12,12 @@ else:
     print("No file .env found")
 
 # Configure OpenAI API
-openai_api_type = os.getenv("OPENAI_TYPE")
-openai_api_version = os.getenv("OPENAI_VERSION")
-openai_api_base = os.getenv("AZURE_OPENAI_ENDPOINT")
-openai_api_key = os.getenv("AZURE_OPENAI_API_KEY")
-COMPLETION_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME")
+openai_api_type = os.getenv("OPENAI_API_TYPE")
+openai_api_key = os.getenv("OPENAI_API_KEY")
+openai_api_base = os.getenv("OPENAI_API_BASE")
+openai_api_version = os.getenv("OPENAI_API_VERSION")
+deployment_name = os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME")
+embedding_name = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME")
 
 # Create an instance of Azure OpenAI
 llm = AzureOpenAI(
@@ -24,7 +25,7 @@ llm = AzureOpenAI(
     openai_api_version = openai_api_version,
     openai_api_base = openai_api_base,
     openai_api_key = openai_api_key,
-    deployment_name = COMPLETION_DEPLOYMENT
+    deployment_name = deployment_name
 )
 
 # Start the App

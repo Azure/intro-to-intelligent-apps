@@ -1,12 +1,14 @@
+import os
 import chainlit as cl
+from dotenv import load_dotenv
 from langchain import PromptTemplate, OpenAI, LLMChain
 from langchain.llms import AzureOpenAI
-import os
-
-from dotenv import load_dotenv
 
 # Load environment variables
-load_dotenv()
+if load_dotenv():
+    print("Found OpenAPI Base Endpoint: " + os.getenv("OPENAI_API_BASE"))
+else: 
+    print("No file .env found")
 
 openai_api_type = os.getenv("OPENAI_API_TYPE")
 openai_api_key = os.getenv("OPENAI_API_KEY")

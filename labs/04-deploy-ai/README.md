@@ -20,4 +20,4 @@ In this lab, we'll walk through deploying a Semantic Kernel App using Azure Func
 
 [Chainlit](03-chainlitagent/README.md)
 
-In this lab, we'll walk through deploying a ChainLitAgent using Python.
+In this lab, we'll walk through deploying a ChainLit App using Python.
