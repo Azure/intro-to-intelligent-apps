@@ -6,6 +6,8 @@ Here's a detailed walkthrough of what you need to get started with the labs.
 
 During these labs, we'll make use of a *Completions* model and an *Embeddings* model, so you'll need access to at least one of each of these. Grant the participants access to Azure OpenAI Service service be assigning the `Cognitive Service OpenAI user`. If the participant is a `Cognitive Service OpenAI contributor`, they can create the following deployments themselves.
 
+**NOTE:** Please take extra care to make sure the correct version of each model is deployed.
+
 Someone may have already set these up for you to use, however if you need to deploy your own you can follow these instructions.
 
 1. Check if you already have an Azure OpenAI service deployed. Go to the Azure Portal and in the top search bar, enter `openai`. You'll then see **Azure OpenAI** listed under **Services**.  Click on **Azure OpenAI** to see all deployed services.
@@ -28,9 +30,11 @@ On the **Develop** page you will see values for **Key 1**, **Key 2**, **Location
 
 4. In the deployments section, we can make sure that we have one of each of the required models available.
 
+**NOTE:** Please take extra care to make sure the correct version of each model is deployed.
+
 ![Alt text](images/deployments.png)
 
-You can see above that we have a *completions* model `gpt-35-turbo` and an *embeddings* model `text-embedding-ada-002`. If you have both of these, then you're good to go. If not, click on the **+ Create new deployment** link and follow the steps to create two deployments. Ensure that one model deployment uses `text-embedding-ada-002` and the other uses a completions model such as `gpt-35-turbo`.
+You can see above that we have a *completions* model `gpt-35-turbo` with version `301` and an *embeddings* model `text-embedding-ada-002` with version `2`. If you have both of these, then you're good to go. If not, click on the **+ Create new deployment** link and follow the steps to create two deployments. Ensure that one model deployment uses `text-embedding-ada-002` and the other uses a completions model such as `gpt-35-turbo`.
 
 Make a note of both the **deployment name** and the **model name** for each of the two deployments.
 
