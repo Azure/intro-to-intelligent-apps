@@ -409,8 +409,7 @@ solutions/AzureOpenAIUtil/
 .env
 **/.DS_Store
 .chroma/
-labs/03-orchestration/04-Qdrant/qdrantstorage/**
 
-# Qdrant Lock File
+# Qdrant
 .lock
-
+labs/03-orchestration/03-Qdrant/qdrantstorage/**
