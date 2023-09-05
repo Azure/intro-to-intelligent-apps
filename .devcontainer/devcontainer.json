@@ -41,9 +41,10 @@
 
 	// Additional devcontainer feature configurations
 	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
 			"version": "latest",
-			"moby": true
+			"enableNonRootDocker": "true",
+			"moby": "true"
 		},
 		"ghcr.io/devcontainers/features/git:1": {
 			"version": "latest"

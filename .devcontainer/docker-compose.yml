@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   devmachine:
-    container_name: devmachine
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,9 +14,15 @@ services:
         NODE_VERSION: "lts/*"
     environment:
       SAMPLE_ENV: test
-
     volumes:
       - ..:/workspace:cached
-
+      - /var/run/docker.sock:/var/run/docker.sock
     # Overrides default command so things don't shut down after the process ends.
-    command: /bin/sh -c "while sleep 1000; do :; done"
+    command: sleep infinity
+    network_mode: service:qdrant
+    depends_on:
+      - qdrant
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - 6333:6333
