@@ -1,6 +1,6 @@
 # Presentation Materials
 
-[PDF coming soon.]()
+[Intro to Intelligent Apps Workshop PDF](intro-to-intelligent-apps-workshop.pdf)
 
 In addition to the PDF, this folder contains links to documents that will assist with the demos.
 
