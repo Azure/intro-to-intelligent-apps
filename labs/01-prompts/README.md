@@ -1,6 +1,6 @@
 # Prompts
 
-In this document you will find a few exercises for practicing prompt engineering. For each exercise, you'll get some input text and then an expected completion. You task is to write the prompt to achieve the expected completion.
+In this document you will find a few exercises for practicing prompt engineering. For each exercise, you'll get some input text and then an expected completion. Your task is to write the prompt to achieve the expected completion.
 ___
 
 ## :question: Exercise 1 - German Translation
