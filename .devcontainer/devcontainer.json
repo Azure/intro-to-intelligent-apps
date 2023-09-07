@@ -41,24 +41,17 @@
 
 	// Additional devcontainer feature configurations
 	"features": {
-		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
-			"version": "latest",
-			"enableNonRootDocker": "true",
-			"moby": "true"
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"username": "vscode"
 		},
-		"ghcr.io/devcontainers/features/git:1": {
-			"version": "latest"
-		},
-		"ghcr.io/devcontainers/features/azure-cli:1": {
-			"version": "latest"
-		},
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/devcontainers/features/azure-cli:1": {},
 		"ghcr.io/devcontainers/features/python:1": {
 			"version": "3.11",
             "installJupyterlab": true
 		},
-        "ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {
-            "version": "latest"
-        }
+        "ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {}
 	}
 
 }
