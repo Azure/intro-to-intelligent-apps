@@ -42,7 +42,7 @@ ___
   Open Questions: XYZ
   Action Items: XYZ 
   ```
-
+Find example emails in the Microsoft news site: https://news.microsoft.com/2022/01/18/satya-nadella-email-to-employees-bringing-the-joy-and-community-of-gaming-to-everyone/
 ___
 
 ## :question: Exercise 5 - Rewriting
