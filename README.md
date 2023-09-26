@@ -15,7 +15,7 @@ This repository introduces and helps organizations get started with building AI 
   * Azure OpenAI Service
   * Demo(s)
   * Break
-  * 🧑🏼‍💻 [Lab #1 - Hands-on with Prompt Engineering Exercises](labs/01-prompts/README.md)
+  * 🧑🏼‍💻 [Lab #1 - Hands-on with Prompt Engineering Exercises](labs/01-prompts/prompts.ipynb)
 * 📣 [Intro to AI Orchestration (60min)](presentations/README.md)
   * AI Orchestration
   * Demo(s)
