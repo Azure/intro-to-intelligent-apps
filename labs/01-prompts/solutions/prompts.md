@@ -3,7 +3,7 @@
 In this document you will find a few exercises for practicing prompt engineering. For each exercise, you'll get some input text and then an expected completion. You task is to write the prompt to achieve the expected completion.
 ___
 
-## :question: Exercise 1 - German Translation
+## ❓ Exercise 1 - German Translation
 
 * Exercise: Write a prompt that generates the expected completion
 * Input text: `I was enjoying the sun, but then a huge cloud came and covered the sky.`
@@ -24,7 +24,7 @@ ___
 
 ___
 
-## :question: Exercise 2 - Negation
+## ❓ Exercise 2 - Negation
 
 * Exercise: Write a prompt that generates the expected completion
 * Input text: `I was enjoying the sun, but then a huge cloud came and covered the sky.`
@@ -43,7 +43,7 @@ ___
 
 ___
 
-## :question: Exercise 3 - Classification
+## ❓ Exercise 3 - Classification
 
 * Exercise: Write a prompt that generates the expected completion
 * Input text: `Not much to write about here, but it does exactly what it's supposed to. filters out the pop sounds. now my recordings are much more crisp. it is one of the lowest prices pop filters on amazon so might as well buy it, they honestly work the same despite their pricing.`
@@ -67,7 +67,7 @@ ___
 
 ___
 
-## :question: Exercise 4 - E-Mail Summarization
+## ❓ Exercise 4 - E-Mail Summarization
 
 * Exercise: Write a prompt that generates the expected completion
 * Input text: Use your own email...
@@ -92,7 +92,7 @@ ___
 
 ___
 
-## :question: Exercise 5 - Rewriting
+## ❓ Exercise 5 - Rewriting
 
 * Exercise: Write a prompt that generates the expected completion
 * Input text: `I was enjoying the sun, but then a huge cloud came and covered the sky.`
@@ -111,7 +111,7 @@ ___
 
 ___
 
-## :question: Exercise 6 - Multiple Tasks
+## ❓ Exercise 6 - Multiple Tasks
 
 * Exercise: Write a prompt that generates the expected completion
 * Input text: `I was enjoying the sun, but then a huge cloud came and covered the sky.`
@@ -143,7 +143,7 @@ ___
 
 ___
 
-## :question: Exercise 7 - Data extraction to JSON
+## ❓ Exercise 7 - Data extraction to JSON
 
 * Exercise: Write a prompt that generates the expected completion
 * Input text:
@@ -195,7 +195,7 @@ ___
 
 ___
 
-## :question: Exercise 8 - Fashion product description
+## ❓ Exercise 8 - Fashion product description
 
 * Exercise: Write a prompt that generates the expected completion
 * Input text:
@@ -229,7 +229,7 @@ ___
 
 ___
 
-## :question: Exercise 9 - Write a Blog Post
+## ❓ Exercise 9 - Write a Blog Post
 
 * Exercise: Write a blog post about a topic of your choice
 * Input text: You choose
@@ -249,7 +249,7 @@ ___
 
 ___
 
-## :question: Exercise 10 - Call Center
+## ❓ Exercise 10 - Call Center
 
 * Exercise: Analyze a call center conversation
 * Input text:
@@ -330,7 +330,7 @@ ___
 
 ___
 
-## :question: Exercise 11 - Few-shot learning
+## ❓ Exercise 11 - Few-shot learning
 
 * Exercise: Write a few-shot learned prompt that classifies a movie summary.
 * Data samples:
@@ -381,7 +381,7 @@ ___
 
 ___
 
-## :question: Exercise 12 - NL to SQL with Codex
+## ❓ Exercise 12 - NL to SQL with Codex
 
 * Exercise: Write a prompt that generates the expected SQL statement
 * Table information:
