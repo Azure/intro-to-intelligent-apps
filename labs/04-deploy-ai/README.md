@@ -4,20 +4,14 @@ In this folder you will find exercises to help increase your understanding of ho
 
 Below is a list of each of the labs in this section and what each one sets out to achieve.
 
-## 01-LangChain-App
+## 01-ACS + Sematic Kernel C#
 
-[Simple application](01-langchain-app/README.md)
+[ACS + Semantic Kernel C#](02-acs-sk-csharp-deploy-api/README.md)
 
-In this lab, we'll walk through deploying a LangChain App using Python and FastAPI.
+In this lab, we'll turn the 03-orchestration/04-ACS/acs-sk-csharp.ipynb notebook lab into an ASP.NET Core API that can then be consumed by a front-end application.
 
-## 02-Azure-Functions
+## 02-ChainLitAgent
 
-[Azure Functions](02-azure-functions/README.md)
+[Chainlit](03-chainlitagent-ui/README.md)
 
-In this lab, we'll walk through deploying a Semantic Kernel App using Azure Functions.
-
-## 03-ChainLitAgent
-
-[Chainlit](03-chainlitagent/README.md)
-
-In this lab, we'll walk through deploying a ChainLit App using Python.
+In this lab, we'll walk through deploying a simple UI that will consume the ASP.NET Core API in the first lab above. The UI will be built using a ChainLit App built in Python which is a simple and easy way to quickly mockup a UI for a ChatGPT like experience.
