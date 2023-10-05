@@ -57,7 +57,7 @@ app.UseSwaggerUI();
 app.UseHttpsRedirection();
 
 // Configure Routing
-app.MapPost("/completion", async ([FromServices] IKernel kernel, [FromBody] string question) =>
+app.MapPost("/completion", async ([FromServices] IKernel kernel, [FromBody] CompletionRequest request) =>
 {
     try
     {
@@ -131,7 +131,7 @@ app.MapPost("/completion", async ([FromServices] IKernel kernel, [FromBody] stri
 
         // Get Embedding for the original question
         OpenAIClient azureOpenAIClient = new OpenAIClient(new Uri(openai_api_base),new AzureKeyCredential(openai_api_key));
-        float[] questionEmbedding = azureOpenAIClient.GetEmbeddings(embedding_name, new EmbeddingsOptions(question)).Value.Data[0].Embedding.ToArray();
+        float[] questionEmbedding = azureOpenAIClient.GetEmbeddings(embedding_name, new EmbeddingsOptions(request.Question)).Value.Data[0].Embedding.ToArray();
 
         Console.WriteLine("Embedding of original question has been completed.");
 
@@ -166,7 +166,7 @@ app.MapPost("/completion", async ([FromServices] IKernel kernel, [FromBody] stri
         // Initialize the prompt variables
         ContextVariables variables = new ContextVariables
         {
-            ["original_question"] = question,
+            ["original_question"] = request.Question,
             ["search_results"] = stringBuilderResults.ToString()
         };
         // Use SK Chaining to Invoke Semantic Function
@@ -175,12 +175,12 @@ app.MapPost("/completion", async ([FromServices] IKernel kernel, [FromBody] stri
 
         Console.WriteLine("Implementation of RAG using SK, C# and Azure Cognitive Search has been completed.");
 
-        return completion;
+        return new CompletionResponse(completion);
     }
     catch (Exception exc)
     {
         Console.WriteLine($"Error: {exc.Message}");
-        return "Something unexpected happened.";
+        return new CompletionResponse("Something unexpected happened.");
     }
 })
 .WithName("Completion")
@@ -188,3 +188,7 @@ app.MapPost("/completion", async ([FromServices] IKernel kernel, [FromBody] stri
 
 // Start the Process
 await app.RunAsync();
+
+public record CompletionRequest (string Question) {}
+
+public record CompletionResponse (string Completion) {}

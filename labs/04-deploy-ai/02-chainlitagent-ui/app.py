@@ -1,62 +1,46 @@
 import os
 import chainlit as cl
 from dotenv import load_dotenv
-from langchain import PromptTemplate, OpenAI, LLMChain
-from langchain.llms import AzureOpenAI
+import urllib.parse
+import asyncio
+import aiohttp
+import json
 
 # Load environment variables
 if load_dotenv():
-    print("Found OpenAPI Base Endpoint: " + os.getenv("OPENAI_API_BASE"))
+    print("Found OpenAPI Base Endpoint: " + os.getenv("BACKEND_API_BASE"))
 else: 
     print("No file .env found")
 
-openai_api_type = os.getenv("OPENAI_API_TYPE")
-openai_api_key = os.getenv("OPENAI_API_KEY")
-openai_api_base = os.getenv("OPENAI_API_BASE")
-openai_api_version = os.getenv("OPENAI_API_VERSION")
-deployment_name = os.getenv("AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME")
-embedding_name = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME")
-
-settings = {
-    "temperature": 0,
-    "max_tokens": 500,
-    "top_p": 1,
-    "frequency_penalty": 0,
-    "presence_penalty": 0,
-    "stop": ["```"]
-}
-
-template = """Question: {question}
-
-Answer: Let's think step by step."""
+backend_api_base = os.getenv("BACKEND_API_BASE")
 
 @cl.on_chat_start
 def main():
-    # Instantiate the chain for that user session
-    llmAzureOpenAI = AzureOpenAI(
-        openai_api_type = openai_api_type,
-        openai_api_version = openai_api_version,
-        openai_api_base = openai_api_base,
-        openai_api_key = openai_api_key,
-        deployment_name = deployment_name,
-        temperature = 0
-    )
-    prompt = PromptTemplate(template=template, input_variables=["question"])
-    llm_chain = LLMChain(prompt=prompt, llm=llmAzureOpenAI, verbose=True)
+    # Add any objects or information needed for the user session.
+    welcome = "Hello!"
 
-    # Store the chain in the user session
-    cl.user_session.set("llm_chain", llm_chain)
+    # Store objects or information user session
+    cl.user_session.set("welcome", welcome)
 
 
 @cl.on_message
 async def main(message: str):
-    # Retrieve the chain from the user session
-    llm_chain = cl.user_session.get("llm_chain")  # type: LLMChain
+    # Retrieve any objects or information from the user session
+    welcome = cl.user_session.get("welcome")  # type: welcome
 
-    # Call the chain asynchronously
-    res = await llm_chain.acall(message, callbacks=[cl.AsyncLangchainCallbackHandler()])
+    # Call the backend api httprequest asynchronously
+    # encoded_data = urllib.parse.urlencode(message).encode("utf-8")
+    headers = {'accept': 'application/json', 'content-type': 'application/json'}
+    async with aiohttp.ClientSession(headers=headers) as session:
+        async with session.post(
+            url=backend_api_base + "/completion",
+            data='{ "question": "' + message + '"}'
+        ) as response:
+            res = await response.text()
+    json_response = json.loads(res)
+    print(json_response["completion"])
 
     # Do any post processing here
 
     # Send the response
-    await cl.Message(content=res["text"]).send()
+    await cl.Message(content=json_response["completion"]).send()
