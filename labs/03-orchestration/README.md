@@ -24,6 +24,8 @@ In this lab, we'll walk through using an open source vector store called Qdrant.
 
 ## 04-ACS
 
-[Azure Cognitive Search](04-ACS/acs.ipynb)
+[Azure Cognitive Search + Semantic Kernel C#](04-ACS/acs-sk-csharp.ipynb)
+[Azure Cognitive Search + Semantic Kernel Python](04-ACS/acs-sk-python.ipynb)
+[Azure Cognitive Search + Langchain Python](04-ACS/acs-lc-python.ipynb)
 
 In this lab, we'll walk through using one of Azure's vector stores, **Azure Cognitive Search**.
