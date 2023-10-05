@@ -9,8 +9,8 @@ At the end of the workshop you will:
 * Know how to use prompt engineering techniques for effective generative AI responses on OpenAI
 * Understand the implications of the usage of tokens and embeddings when interacting with an LLM
 * Have experience in leveraging AI orchestrators like Langchain/ Semantic Kernel with Azure OpenAI
-* Evaluated different Vectorstores like Qdrant/ Azure Cognitive Search to enhance LLM responses with your data and context
-* Seen how to turn a business scenario with data, context and user input into an intelligent application on Azure
+* Have evaluated different Vectorstores like Qdrant/ Azure Cognitive Search to enhance LLM responses with your data and context
+* Know how to turn a business scenario with data, context and user input into an intelligent application on Azure
 
 ### 🌅 Morning (9:00 – 12:15)
 
