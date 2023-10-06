@@ -73,59 +73,12 @@ app.MapPost("/completion", async ([FromServices] IKernel kernel, [FromBody] Comp
         // The question is being passed in via the message body.
         // [FromBody] string question
 
-        // Create a prompt template with variables, note the double curly braces with dollar sign for the variables
-        // First let's create the prompt string.
-        var sk_prompt = @"
-        Question: {{$original_question}}
-
-        Do not use any other data.
-        Only use the movie data below when responding.
-        {{$search_results}}
-        ";
-        // Create the PromptTemplateConfig
-        PromptTemplateConfig promptConfig = new PromptTemplateConfig
-        {
-            Schema = 1,
-            Type = "completion",
-            Description = "Gets the intent of the user.",
-            Completion = 
-            {
-                Temperature = 0.1,
-                TopP = 0.5,
-                PresencePenalty = 0.0,
-                FrequencyPenalty = 0.0,
-                MaxTokens = 500
-                // StopSequences = null,
-                // ChatSystemPprompt = null;
-            },
-            Input = 
-            {
-                Parameters = new List<PromptTemplateConfig.InputParameter>
-                {
-                    new PromptTemplateConfig.InputParameter
-                    {
-                        Name="original_question",
-                        Description="The user's request.",
-                        DefaultValue=""
-                    },
-                    new PromptTemplateConfig.InputParameter
-                    {
-                        Name="search_results",
-                        Description="Vector Search results from Azure Cognitive Search.",
-                        DefaultValue=""
-                    }
-                }
-            }
-        };
-        // Create the SemanticFunctionConfig object
-        PromptTemplate promptTemplate = new PromptTemplate(
-            sk_prompt,
-            promptConfig,
-            kernel
-        );
-        SemanticFunctionConfig functionConfig = new SemanticFunctionConfig(promptConfig, promptTemplate);
-        // Register the GetIntent function with the Kernel
-        ISKFunction getIntentFunction = kernel.RegisterSemanticFunction("CustomPlugin", "GetIntent", functionConfig);
+        // Create a prompt template with variables, note the double curly braces with dollar sign for the variables.
+        // The PromptTemplate which was setup as inline SemanticFunction in the Polyglot notebook setup has been moved
+        // into the Plugins directory so it is easier to manage and configure. Picture the ability to mount updated
+        // prompt files into a container without having to rewrite the source code.
+        var pluginsDirectory = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Plugins");
+        var customPlugin = kernel.ImportSemanticSkillFromDirectory(pluginsDirectory, "CustomPlugin");
 
         Console.WriteLine("Semantic Function GetIntent with SK has been completed.");
 
@@ -170,7 +123,7 @@ app.MapPost("/completion", async ([FromServices] IKernel kernel, [FromBody] Comp
             ["search_results"] = stringBuilderResults.ToString()
         };
         // Use SK Chaining to Invoke Semantic Function
-        string completion = (await kernel.RunAsync(variables, getIntentFunction)).Result;
+        string completion = (await kernel.RunAsync(variables, customPlugin["GetIntent"])).Result;
         Console.WriteLine(completion);
 
         Console.WriteLine("Implementation of RAG using SK, C# and Azure Cognitive Search has been completed.");
