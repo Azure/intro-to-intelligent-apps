@@ -9,6 +9,7 @@ WORKDIR /src
 COPY ["acs-sk-csharp.csproj", "."]
 RUN dotnet restore "acs-sk-csharp.csproj"
 COPY ["Program.cs", "."]
+COPY ["Plugins/", "./Plugins/"]
 RUN dotnet build "acs-sk-csharp.csproj" -c $configuration -o /app/build
 
 FROM build AS publish
