@@ -193,17 +193,6 @@ ___
   * Table: products // Columns: product_id, price, name, description
 * Expected completion: a query that returns the top 10 orders and show the customer name
 
-___
-
-## :question: Exercise 13 - Solving riddles
-
-* Exercise: Write a prompt that solves a riddle and demonstrates chain of thought thinking.
-* Example riddles:
-* 1.) I have a book, 4 eggs and 4 cups. Please tell me how to stack them onto each other in a stable manner.
-* 2.) In the room there are John, Mark, a cat, a red box and a blue box. John takes the cat and puts it in the red box. He leaves the room. While John ist away, Mark takes the cat out of the red box and into the blue box. Mark leaves the room. Then Mark and John come back and enter the room. They don't know what happened in the room while they were away. What do they think?
-* 3.) I went to the market and bought 10 apples. I gave 2 apples to the neighbor and 2 to the repairman. I then went and bought 5 more apples and ate 1. How many apples did I remain with?
-
-
 ## Next Section
 
 📣 [Integrating AI](../02-integrating-ai/README.md)
