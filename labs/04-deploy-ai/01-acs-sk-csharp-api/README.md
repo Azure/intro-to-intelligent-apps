@@ -6,7 +6,7 @@ The entire solution is in this folder, but we also have all the step by step ins
 
 ## Complete Solution
 
-1. To test locally fill in appsettings.json with the same values from the .env file that was used for the Jupyter Notebooks.
+1. To test locally fill in `appsettings.json` with the same values from the .env file that was used for the Jupyter Notebooks.
 2. Build and Run the App
 
 ```csharp
@@ -38,21 +38,20 @@ dotnet add acs-sk-csharp.csproj package Azure.Search.Documents --version "11.5.0
 
 ### Update Program.cs
 
-The first thing we need to do is to add some Using statements.
+The first thing we need to do is to add some Using statements to the `Program.cs` file.
 
 ```csharp
 using System.Text;
 using Microsoft.SemanticKernel;
-using Microsoft.SemanticKernel.SemanticFunctions;
 using Microsoft.SemanticKernel.Orchestration;
-using Microsoft.SemanticKernel.SkillDefinition;
 using Azure;
 using Azure.Search.Documents;
 using Azure.Search.Documents.Models;
 using Azure.AI.OpenAI;
+using Microsoft.AspNetCore.Mvc;
 ```
 
-Next we read in the variables. Because this is ASP.NET Core we will switch from the DotEnv package to native ASP.NET Core Configuration.
+Next we read in the variables. Because this is ASP.NET Core we will switch from the DotEnv package we used in earlier labs to native ASP.NET Core Configuration.
 
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
@@ -94,7 +93,7 @@ builder.Services.AddScoped(sp =>
 });
 ```
 
-Next we swap out the app.MapGet weatherforecast function with our own.
+Next we swap out the `app.MapGet` `weatherforecast` function with our own.
 
 ```csharp
 // Configure Routing
@@ -114,59 +113,10 @@ app.MapPost("/completion", async ([FromServices] IKernel kernel, [FromBody] Comp
         // The question is being passed in via the message body.
         // [FromBody] string question
 
-        // Create a prompt template with variables, note the double curly braces with dollar sign for the variables
-        // First let's create the prompt string.
-        var sk_prompt = @"
-        Question: {{$original_question}}
-
-        Do not use any other data.
-        Only use the movie data below when responding.
-        {{$search_results}}
-        ";
-        // Create the PromptTemplateConfig
-        PromptTemplateConfig promptConfig = new PromptTemplateConfig
-        {
-            Schema = 1,
-            Type = "completion",
-            Description = "Gets the intent of the user.",
-            Completion = 
-            {
-                Temperature = 0.1,
-                TopP = 0.5,
-                PresencePenalty = 0.0,
-                FrequencyPenalty = 0.0,
-                MaxTokens = 500
-                // StopSequences = null,
-                // ChatSystemPprompt = null;
-            },
-            Input = 
-            {
-                Parameters = new List<PromptTemplateConfig.InputParameter>
-                {
-                    new PromptTemplateConfig.InputParameter
-                    {
-                        Name="original_question",
-                        Description="The user's request.",
-                        DefaultValue=""
-                    },
-                    new PromptTemplateConfig.InputParameter
-                    {
-                        Name="search_results",
-                        Description="Vector Search results from Azure Cognitive Search.",
-                        DefaultValue=""
-                    }
-                }
-            }
-        };
-        // Create the SemanticFunctionConfig object
-        PromptTemplate promptTemplate = new PromptTemplate(
-            sk_prompt,
-            promptConfig,
-            kernel
-        );
-        SemanticFunctionConfig functionConfig = new SemanticFunctionConfig(promptConfig, promptTemplate);
-        // Register the GetIntent function with the Kernel
-        ISKFunction getIntentFunction = kernel.RegisterSemanticFunction("CustomPlugin", "GetIntent", functionConfig);
+        // Configure a prompt as a plug in. We'll define the path to the plug in here and setup
+        // the plug in later.
+        var pluginsDirectory = Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Plugins");
+        var customPlugin = kernel.ImportSemanticSkillFromDirectory(pluginsDirectory, "CustomPlugin");
 
         Console.WriteLine("Semantic Function GetIntent with SK has been completed.");
 
@@ -211,7 +161,7 @@ app.MapPost("/completion", async ([FromServices] IKernel kernel, [FromBody] Comp
             ["search_results"] = stringBuilderResults.ToString()
         };
         // Use SK Chaining to Invoke Semantic Function
-        string completion = (await kernel.RunAsync(variables, getIntentFunction)).Result;
+        string completion = (await kernel.RunAsync(variables, customPlugin["GetIntent"])).Result;
         Console.WriteLine(completion);
 
         Console.WriteLine("Implementation of RAG using SK, C# and Azure Cognitive Search has been completed.");
@@ -235,21 +185,104 @@ public record CompletionRequest (string Question) {}
 public record CompletionResponse (string Completion) {}
 ```
 
-Last, but not least we changed the app.Run() to be async.
+Note at the end of the last section of code, we replaced the app.Run() from the original code with the async version.
 
 ```csharp
 await app.RunAsync();
 ```
 
+Also, as we've replaced the `weatherforecast` function, we can remove the `WeatherForecast` record. So, you can delete the following lines which should be at the end of the `Program.cs` file.
+
+```csharp
+record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
+{
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}
+```
+
+### Create a Plug In
+
+Next we will create a plug in that will be used to define the prompt that will be sent to the Azure OpenAI API.
+
+In the root of the project create a folder called `Plugins` and in that folder create another folder called `CustomPlugin`.
+
+```shell
+mkdir Plugins
+cd Plugins
+mkdir CustomPlugin
+```
+
+The Plug In that we're going to create will be called `GetIntent`, so let's create a folder for that too.
+
+```shell
+cd CustomPlugin
+mkdir GetIntent
+```
+
+Under the `GetIntent` folder we will create two files. One file will provide the template for the prompt that we want to use with Azure OpenAI. The other file will provide the configuration parameters.
+
+Create a file called `skprompt.txt` and add the following text.
+
+```text
+Question: {{$original_question}}
+
+Do not use any other data.
+Only use the movie data below when responding.
+{{$search_results}}
+```
+
+Next, create a file named `config.json` and add the following.
+
+```json
+{
+    "schema": 1,
+    "type": "completion",
+    "description": "Gets the intent of the user.",
+    "completion": {
+         "max_tokens": 500,
+         "temperature": 0.1,
+         "top_p": 0.5,
+         "presence_penalty": 0.0,
+         "frequency_penalty": 0.0
+    },
+    "input": {
+         "parameters": [
+            {
+                "name": "original_question",
+                "description": "The user's request.",
+                "defaultValue": ""
+            },
+            {
+                "name": "search_results",
+                "description": "Vector Search results from Azure Cognitive Search.",
+                "defaultValue": ""
+            }
+         ]
+    }
+}
+```
+
+When you've completed the above steps, your folder structure should look like this.
+
+```text
+acs-sk-csharp
+├── Plugins
+│   ├── CustomPlugin
+│   │   ├── GetIntent
+│   │   │   ├── config.json
+│   │   │   ├── skprompt.txt
+```
+
 ### Test the App
 
-Now that we have all the code in place let'c compile and run it.
+Now that we have all the code in place let's compile and run it.
 
 ```csharp
 dotnet run
 ```
 
-Once the app is started, open a browser and navigate to http://127.0.0.1:5291/swagger/index.html 
+Once the app is started, open a browser and navigate to http://127.0.0.1:5291/swagger/index.html
+>**Note:** the port number may be different to `5291`, so double check the output from the `dotnet run` command.
 
 Click on the "POST /completion" endpoint, click on "Try it out", enter a Prompt, "List the movies about ships on the water.", then click on "Execute".
 
