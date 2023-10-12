@@ -1,0 +1,5 @@
+Question: {{$original_question}}
+
+Do not use any other data.
+Only use the movie data below when responding.
+{{$search_results}}

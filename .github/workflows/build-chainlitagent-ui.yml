@@ -1,4 +1,4 @@
-name: build-langchainlit-agent
+name: build-chainlitagent-ui
 
 on:
   push:
@@ -9,10 +9,10 @@ on:
 
 defaults:
   run:
-    working-directory: labs/04-deploy-ai/03-chainlitagent
+    working-directory: labs/04-deploy-ai/02-chainlitagent-ui
 
 env:
-  IMAGE_NAME: langchainlit-agent
+  IMAGE_NAME: chainlitagent-ui
 
 jobs:
 
