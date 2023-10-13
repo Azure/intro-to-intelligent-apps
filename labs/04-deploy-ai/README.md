@@ -4,14 +4,20 @@ In this folder you will find exercises to help increase your understanding of ho
 
 Below is a list of each of the labs in this section and what each one sets out to achieve.
 
-## 01-ACS + Sematic Kernel C#
+## 01-Backend API
 
-[ACS + Semantic Kernel C#](01-acs-sk-csharp-api/README.md)
+Pick one of the following APIs to deploy depending on whether you are more oriented towards C# or Python development.
 
-In this lab, we'll turn the 03-orchestration/04-ACS/acs-sk-csharp.ipynb notebook lab into an ASP.NET Core API that can then be consumed by a front-end application.
+[ACS + Semantic Kernel C#](01-backend-api/acs-sk-csharp-api/README.md)
 
-## 02-ChainLitAgent
+In this lab, we'll turn the 03-orchestration/04-ACS/acs-sk-csharp.ipynb notebook lab into an ASP.NET Core API that can then be consumed by the frontend UI application.
 
-[Chat UI using Chainlit](02-chainlitagent-ui/README.md)
+[ACS + Langchain Python](01-backend-api/acs-lc-python-api/README.md)
 
-In this lab, we'll walk through deploying a simple UI that will consume the ASP.NET Core API in the first lab above. The UI will be built using a ChainLit App built in Python which is a simple and easy way to quickly mockup a UI for a ChatGPT like experience.
+In this lab, we'll turn the 03-orchestration/04-ACS/acs-lc-python.ipynb notebook lab into a Python FastAPI API that can then be consumed by the frontend UI application.
+
+## 02-Frontend UI
+
+[Chat UI using Chainlit](02-frontend-ui/chainlitagent-ui/README.md)
+
+In this lab, we'll walk through deploying a simple UI that will consume the ASP.NET Core or Python FastAPI API in the first deployment section above. The UI will be built using a ChainLit App built in Python which is a simple and easy way to quickly mockup a UI for a ChatGPT like experience.

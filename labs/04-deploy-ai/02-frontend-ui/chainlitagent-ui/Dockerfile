@@ -16,13 +16,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Stage 2 - Copy only necessary files to the runner stage
 FROM python:3.11-slim
-ARG FILENAME
-ARG PORT=8000
 WORKDIR /app
 COPY --from=builder /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 COPY app.py .
 COPY chainlit.md .
 COPY ./.chainlit ./.chainlit
-EXPOSE $PORT
-CMD chainlit run app.py --port=$PORT
+EXPOSE 8000
+CMD chainlit run app.py --port=8000

@@ -1,4 +1,4 @@
-# 04 - Deploy AI App
+# 04 - Deploy ACS Semantic Kernel C# API
 
 In this folder you will find a sample AI App that is built using C#, Semantic Kernel and Azure Cognitive Search.
 
@@ -9,7 +9,7 @@ The entire solution is in this folder, but we also have all the step by step ins
 1. To test locally fill in `appsettings.json` with the same values from the .env file that was used for the Jupyter Notebooks.
 2. Build and Run the App
 
-```csharp
+```bash
 dotnet run
 ```
 
@@ -17,7 +17,7 @@ dotnet run
 
 ### Create C# Project and Solution
 
-```csharp
+```bash
 mkdir acs-sk-csharp
 cd acs-sk-csharp
 
@@ -28,7 +28,7 @@ dotnet sln acs-sk-csharp.sln add acs-sk-csharp.csproj
 
 ### Add Dependencies
 
-```csharp
+```bash
 dotnet add acs-sk-csharp.csproj package Azure.Core --version "1.35.0"
 dotnet add acs-sk-csharp.csproj package Azure.AI.OpenAI --version "1.0.0-beta.7"
 dotnet add acs-sk-csharp.csproj package Microsoft.SemanticKernel --version "0.24.230918.1-preview"
@@ -206,7 +206,7 @@ Next we will create a plug in that will be used to define the prompt that will b
 
 In the root of the project create a folder called `Plugins` and in that folder create another folder called `CustomPlugin`.
 
-```shell
+```bash
 mkdir Plugins
 cd Plugins
 mkdir CustomPlugin
@@ -214,7 +214,7 @@ mkdir CustomPlugin
 
 The Plug In that we're going to create will be called `GetIntent`, so let's create a folder for that too.
 
-```shell
+```bash
 cd CustomPlugin
 mkdir GetIntent
 ```

@@ -1,0 +1,9 @@
+azure-core==1.29.3
+azure-identity==1.14.0
+azure-search-documents==11.4.0b8
+fastapi==0.99.1
+uvicorn==0.23.2
+openai==0.27.9
+langchain==0.0.312
+tiktoken==0.4.0
+python-dotenv==1.0.0
