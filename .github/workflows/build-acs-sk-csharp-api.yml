@@ -9,7 +9,7 @@ on:
 
 defaults:
   run:
-    working-directory: labs/04-deploy-ai/01-acs-sk-csharp-api/acs-sk-csharp
+    working-directory: labs/04-deploy-ai/01-backend-api/acs-sk-csharp-api/acs-sk-csharp
 
 env:
   IMAGE_NAME: acs-sk-csharp-api

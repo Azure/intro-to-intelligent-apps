@@ -1,4 +1,4 @@
-name: build-chainlitagent-ui
+name: build-acs-lc-python-api
 
 on:
   push:
@@ -9,10 +9,10 @@ on:
 
 defaults:
   run:
-    working-directory: labs/04-deploy-ai/02-frontend-ui/chainlitagent-ui
+    working-directory: labs/04-deploy-ai/01-backend-api/acs-lc-python-api/acs-lc-python
 
 env:
-  IMAGE_NAME: chainlitagent-ui
+  IMAGE_NAME: acs-lc-python-api
 
 jobs:
 
