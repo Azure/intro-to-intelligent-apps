@@ -187,7 +187,7 @@ Now that we have all the code in place let's run it.
 uvicorn main:app --reload --host=0.0.0.0 --port=5291
 ```
 
-Once the app is started, open a browser and navigate to http://127.0.0.1:5291/docs/index.html
+Once the app is started, open a browser and navigate to http://127.0.0.1:5291/docs
 >**Note:** the port number may be different to `5291`, so double check the output from the `uvicorn main:app` command.
 
 Click on the "POST /completion" endpoint, click on "Try it out", enter a Prompt, "List the movies about ships on the water.", then click on "Execute".
