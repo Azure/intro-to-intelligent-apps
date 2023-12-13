@@ -2,4 +2,4 @@ chainlit==0.6.402
 fastapi==0.99.1
 python-dotenv==1.0.0
 asyncio==3.4.3
-aiohttp==3.8.5
+aiohttp==3.9.0
