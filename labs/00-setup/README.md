@@ -4,7 +4,7 @@ Here's a detailed walkthrough of what you need to get started with the labs.
 
 ## OpenAI Model Deployments
 
-During these labs, we'll make use of a *Completions* model and an *Embeddings* model, so you'll need access to at least one of each of these. Grant the participants access to Azure OpenAI Service service be assigning the `Cognitive Service OpenAI user`. If the participant is a `Cognitive Service OpenAI contributor`, they can create the following deployments themselves.
+During these labs, we'll make use of a *Completions* model and an *Embeddings* model, so you'll need access to at least one of each of these. Grant the participants access to Azure OpenAI Service service by assigning the `Cognitive Service OpenAI user`. If the participant is a `Cognitive Service OpenAI contributor`, they can create the following deployments themselves.
 
 **NOTE:** Please take extra care to make sure the correct version of each model is deployed.
 
