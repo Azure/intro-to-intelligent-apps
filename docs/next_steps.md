@@ -23,7 +23,7 @@ For those eager to learn more, here are some additional links and deeper dive wo
 * :muscle: [Revolutionize your Enterprise Data with ChatGPT](https://techcommunity.microsoft.com/t5/ai-applied-ai-blog/revolutionize-your-enterprise-data-with-chatgpt-next-gen-apps-w/ba-p/3762087)
 * :muscle: [Smart .NET Chat App with Caching](https://devblogs.microsoft.com/dotnet/transform-business-smart-dotnet-apps-azure-chatgpt/)
 * :bulb: [Semantic Search with Azure Cognitive Search](https://learn.microsoft.com/en-us/azure/search/semantic-search-overview)
-* :muscle: [Vector Search & AI Assistance w/Azure Cosmos DB](https://github.com/AzureCosmosDB/VectorSearchAiAssistant)
+* :muscle: [Vector Search & AI Assistance w/Azure Cosmos DB](https://github.com/Azure/Vector-Search-AI-Assistant)
 
 ## Deep Dive Workshops
 
