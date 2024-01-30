@@ -29,3 +29,9 @@ In this lab, we'll walk through using an open source vector store called Qdrant.
 [Azure AI Search + Langchain Python](04-ACS/acs-lc-python.ipynb)
 
 In this lab, we'll walk through using one of Azure's vector stores, **Azure AI Search**.
+
+## 05-Functions
+
+[Function calling](05-Functions/function-calling.ipynb)
+
+In this lab, we'll walk through integrating external APIs into your chain.
