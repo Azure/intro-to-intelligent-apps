@@ -13,3 +13,5 @@ markdown==3.5.2
 qdrant-client==1.7.1
 chromadb==0.4.22
 yfinance==0.2.36
+langchain-community
+pymongo
