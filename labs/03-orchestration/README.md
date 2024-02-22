@@ -22,7 +22,7 @@ In this lab, we'll walk through the basics of creating Vectors using Embeddings 
 
 In this lab, we'll walk through using an open source vector store called Qdrant.
 
-## 04-ACS
+## 04-AI Search
 
 [Azure AI Search + Semantic Kernel C#](04-ACS/acs-sk-csharp.ipynb)
 [Azure AI Search + Semantic Kernel Python](04-ACS/acs-sk-python.ipynb)
@@ -35,3 +35,9 @@ In this lab, we'll walk through using one of Azure's vector stores, **Azure AI S
 [Function calling](05-Functions/function-calling.ipynb)
 
 In this lab, we'll walk through integrating external APIs into your chain.
+
+## 06-Conversations
+
+[Conversations](06-Conversations/chat-conversation.ipynb)
+
+In this lab, we'll walk through persisting your chat history in **Azure CosmosDB**.
