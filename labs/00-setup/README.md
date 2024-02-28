@@ -43,48 +43,48 @@ We need to update a configuration file in this repo so that the labs are able to
 
 Here's a detailed list of what you need to enter into the `.env` file and where to find the information you need to supply.
 
-The first item `OPENAI_API_TYPE` can be set to one of two values, depending on how you plan to authenticate to the Azure OpenAI service. To use an API key, set this to `azure`. To use Azure AD authentication, set this to `azure_ad`.
+OPTIONAL: The `OPENAI_API_TYPE` value can be set to one of two values, depending on how you plan to authenticate to the Azure OpenAI service. To use an API key, set this to `azure` (default). To use Azure AD authentication, set this to `azure_ad` (currently not supported by this lab)
 
 ```
 OPENAI_API_TYPE = "azure"
 ```
 
-If you're using Azure AD authentication, the `OPENAI_API_KEY` value can be left empty. It will be populated with an Azure AD token at runtime.
+If you're using Azure AD authentication, the `AZURE_OPENAI_API_KEY` value can be left empty. It will be populated with an Azure AD token at runtime.
 
-If you're using API keys, the `OPENAI_API_KEY` is the **Key 1** value you found on the **Develop** tab of the **Overview** page for the **Azure OpenAI Service** in the Azure portal.
+If you're using API keys, the `AZURE_OPENAI_API_KEY` is the **Key 1** value you found on the **Develop** tab of the **Overview** page for the **Azure OpenAI Service** in the Azure portal.
 
 ![Alt text](images/key-1-value.png)
 
 ```
-OPENAI_API_KEY = "5a8d1ea15ba00f1a833ab1ff245cdb0a"
+AZURE_OPENAI_API_KEY = "5a8d1ea15ba00f1a833ab1ff245cdb0a"
 ```
 
-The `OPENAI_API_BASE` is the **Endpoint** value you found on the **Develop** tab of the **Overview** page for the **Azure OpenAI Service** in the Azure portal.
+The `AZURE_OPENAI_ENDPOINT` is the **Endpoint** value you found on the **Develop** tab of the **Overview** page for the **Azure OpenAI Service** in the Azure portal.
 
 ![Alt text](images/endpoint.png)
 
 It will look similar to the below, ending with `.openai.azure.com`.
 
 ```
-OPENAI_API_BASE = "https://my-openaiservice.openai.azure.com/"
+AZURE_OPENAI_ENDPOINT = "https://my-openaiservice.openai.azure.com/"
 ```
 
 The `OPENAI_API_VERSION` is used for the Azure OpenAI API to determine which version of the API to use. The value below should be fine, but you can view available versions of the API at the following link: https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#rest-api-versioning
 
 ```
-OPENAI_API_VERSION = "2023-05-15"
+OPENAI_API_VERSION = "2023-09-01-preview"
 ```
 
 The next sections all relate to the models you have deployed in the Azure OpenAI service.
 
-First is `OPENAI_COMPLETION_MODEL`. This is the name of the **completions model**. It's likely to be `gpt-35-turbo`, but if you're using a different completions model, provide the name of the model here.
+First is `AZURE_OPENAI_COMPLETION_MODEL`. This is the name of the **completions model**. It's likely to be `gpt-35-turbo`, but if you're using a different completions model, provide the name of the model here.
 
 Note for this value, it's the name of the **model**, NOT the name of the **deployment**.
 
 ![Alt text](images/model-name.png)
 
 ```
-OPENAI_COMPLETION_MODEL = "gpt-35-turbo"
+AZURE_OPENAI_COMPLETION_MODEL = "gpt-35-turbo"
 ```
 
 The next two items are the **deployments** you have created using the Azure OpenAI service. First is the name of the deployment for the completions model and can be found in the **Deployment name** column of the **Deployments** page in Azure AI Studio.
