@@ -34,7 +34,7 @@ On the **Develop** page you will see values for **Key 1**, **Key 2**, **Location
 
 ![Alt text](images/deployments.png)
 
-You can see above that we have a *completions* model `gpt-35-turbo` with version `301` and an *embeddings* model `text-embedding-ada-002` with version `2`. If you have both of these, then you're good to go. If not, click on the **+ Create new deployment** link and follow the steps to create two deployments. Ensure that one model deployment uses `text-embedding-ada-002` and the other uses a completions model such as `gpt-35-turbo`.
+You can see above that we have a *completions* model `gpt-35-turbo` with version `0613` and an *embeddings* model `text-embedding-ada-002` with version `2`. If you have both of these, then you're good to go. If not, click on the **+ Create new deployment** link and follow the steps to create two deployments. Ensure that one model deployment uses `text-embedding-ada-002` and the other uses a completions model such as `gpt-35-turbo`.
 
 Make a note of both the **deployment name** and the **model name** for each of the two deployments.
 
