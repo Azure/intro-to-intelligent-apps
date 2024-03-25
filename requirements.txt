@@ -3,7 +3,7 @@ azure-identity==1.15.0
 azure-search-documents==11.4.0
 semantic-kernel==0.4.5.dev0
 openai==1.9.0
-langchain==0.1.1
+langchain==0.1.12
 langchain-openai==0.0.3
 tiktoken==0.5.2
 python-dotenv==1.0.0
