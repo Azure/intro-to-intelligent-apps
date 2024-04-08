@@ -14,4 +14,4 @@ qdrant-client==1.8.0
 chromadb==0.4.24
 yfinance==0.2.37
 langchain-community==0.0.29
-pymongo==4.6.2
+pymongo==4.6.3
