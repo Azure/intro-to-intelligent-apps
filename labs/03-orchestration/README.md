@@ -16,7 +16,7 @@ In this lab, we'll walk through the basics of Tokens, how they relate to LLMs, a
 
 In this lab, we'll walk through the basics of creating Vectors using Embeddings and why they are important when it comes to AI Orchestration.
 
-## 03-Qdrant
+## 03-Vectorstore
 
 [Qdrant](03-Qdrant/qdrant.ipynb)
 
