@@ -107,6 +107,7 @@ With all of the above updates to the `.env` file made, make sure you save the fi
 
 **NOTE**: The `.gitignore` file in this repo is configured to ignore the `.env` file, so the secrets such as the API key will not be uploaded to a public repo.
 
+You can update the rest of the properties later in the labs.
 ___
 
 ## Next Section
