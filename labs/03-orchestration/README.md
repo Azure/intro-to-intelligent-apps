@@ -16,11 +16,15 @@ In this lab, we'll walk through the basics of Tokens, how they relate to LLMs, a
 
 In this lab, we'll walk through the basics of creating Vectors using Embeddings and why they are important when it comes to AI Orchestration.
 
-## 03-Qdrant
+## 03-VectorStore
 
-[Qdrant](03-Qdrant/qdrant.ipynb)
+[Qdrant](https://github.com/Azure/intro-to-intelligent-apps/blob/vectorLab/labs/03-orchestration/03-VectorStore/qdrant.ipynb )
 
 In this lab, we'll walk through using an open source vector store called Qdrant.
+
+[Mongo](https://github.com/Azure/intro-to-intelligent-apps/blob/vectorLab/labs/03-orchestration/03-VectorStore/qdrant.ipynb)
+
+In this lab, we'll use Azure CosmosDB for MongoDB (vCore) as a vector store and as a semantic cache. 
 
 ## 04-AI Search
 
@@ -40,4 +44,4 @@ In this lab, we'll walk through integrating external APIs into your chain.
 
 [Conversations](06-Conversations/chat-conversation.ipynb)
 
-In this lab, we'll walk through persisting your chat history in **Azure CosmosDB**.
+In this lab, we'll walk through persisting your chat history in **Azure Cosmos DB for MongoDB (vCore)**.
