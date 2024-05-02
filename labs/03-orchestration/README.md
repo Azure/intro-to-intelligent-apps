@@ -18,11 +18,11 @@ In this lab, we'll walk through the basics of creating Vectors using Embeddings 
 
 ## 03-VectorStore
 
-[Qdrant](https://github.com/Azure/intro-to-intelligent-apps/blob/vectorLab/labs/03-orchestration/03-VectorStore/qdrant.ipynb )
+[Qdrant](https://github.com/Azure/intro-to-intelligent-apps/blob/main/labs/03-orchestration/03-VectorStore/qdrant.ipynb )
 
 In this lab, we'll walk through using an open source vector store called Qdrant.
 
-[Mongo](https://github.com/Azure/intro-to-intelligent-apps/blob/vectorLab/labs/03-orchestration/03-VectorStore/qdrant.ipynb)
+[Mongo](https://github.com/Azure/intro-to-intelligent-apps/blob/main/labs/03-orchestration/03-VectorStore/mongo.ipynb)
 
 In this lab, we'll use Azure CosmosDB for MongoDB (vCore) as a vector store and as a semantic cache. 
 
