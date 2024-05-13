@@ -1,7 +1,7 @@
 {
     "schema": 1,
     "type": "completion",
-    "description": "Gets the intent of the user.",
+    "description": "Answers questions about provided movie data.",
     "completion": {
          "max_tokens": 500,
          "temperature": 0.1,
@@ -18,7 +18,7 @@
             },
             {
                 "name": "search_results",
-                "description": "Vector Search results from Azure Cognitive Search.",
+                "description": "Vector Search results from Azure AI Search.",
                 "defaultValue": ""
             }
          ]

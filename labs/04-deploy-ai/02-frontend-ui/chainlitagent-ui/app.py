@@ -24,17 +24,18 @@ def main():
 
 
 @cl.on_message
-async def main(message: str):
+async def main(message: cl.Message):
     # Retrieve any objects or information from the user session
     welcome = cl.user_session.get("welcome")  # type: welcome
 
     # Call the backend api httprequest asynchronously
     # encoded_data = urllib.parse.urlencode(message).encode("utf-8")
+    print (message.content)
     headers = {'accept': 'application/json', 'content-type': 'application/json'}
     async with aiohttp.ClientSession(headers=headers) as session:
         async with session.post(
-            url=backend_api_base + "/completion",
-            data='{ "question": "' + message + '"}'
+            url=backend_api_base + "/completion/",
+            data='{ "Question": "' + message.content + '"}'
         ) as response:
             res = await response.text()
     json_response = json.loads(res)

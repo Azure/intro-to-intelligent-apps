@@ -9,10 +9,10 @@ on:
 
 defaults:
   run:
-    working-directory: labs/04-deploy-ai/01-backend-api/acs-lc-python-api/acs-lc-python
+    working-directory: labs/04-deploy-ai/01-backend-api/aais-lc-python-api/aais-lc-python
 
 env:
-  IMAGE_NAME: acs-lc-python-api
+  IMAGE_NAME: aais-lc-python-api
 
 jobs:
 
