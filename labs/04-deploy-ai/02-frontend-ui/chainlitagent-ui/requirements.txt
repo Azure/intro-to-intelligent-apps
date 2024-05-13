@@ -1,5 +1,3 @@
-chainlit==0.6.402
-fastapi==0.99.1
-python-dotenv==1.0.0
-asyncio==3.4.3
-aiohttp==3.9.0
+chainlit==1.0.506
+fastapi==0.110.1
+python-dotenv==1.0.1
