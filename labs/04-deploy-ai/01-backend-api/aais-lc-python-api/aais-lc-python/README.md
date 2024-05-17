@@ -16,5 +16,5 @@ pip install -r requirements.txt
 uvicorn main:app --reload --host=0.0.0.0 --port=5291
 ```
 
-3. Open a browser and navigate to http://localhost:8000/docs
+3. Open a browser and navigate to http://localhost:5291/docs
 4. Click on the "POST /completion" endpoint, click on "Try it out", enter a Prompt, then click on "Execute".
