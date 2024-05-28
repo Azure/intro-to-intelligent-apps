@@ -20,7 +20,7 @@ In this lab, we'll walk through the basics of creating Vectors using Embeddings 
 
 [Qdrant](https://github.com/Azure/intro-to-intelligent-apps/blob/main/labs/03-orchestration/03-VectorStore/qdrant.ipynb )
 
-In this lab, we'll walk through using an open source vector store called Qdrant.
+In this lab, we'll walk through using an open source vector store called Qdrant to understand the basics.
 
 [Mongo](https://github.com/Azure/intro-to-intelligent-apps/blob/main/labs/03-orchestration/03-VectorStore/mongo.ipynb)
 
