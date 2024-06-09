@@ -15,13 +15,13 @@
 			"extensions": [
 				"ms-dotnettools.csharp",
 				"ms-dotnettools.csdevkit",
-                "ms-dotnettools.dotnet-interactive-vscode",              
+				"ms-dotnettools.dotnet-interactive-vscode",              
 				"ms-azuretools.vscode-bicep",
-                "ms-azuretools.azure-dev",
+				"ms-azuretools.azure-dev",
 				"ms-python.python",
 				"ms-toolsai.jupyter",
 				"ms-semantic-kernel.semantic-kernel",
-                "esbenp.prettier-vscode",
+        "esbenp.prettier-vscode",
 				"GitHub.copilot",
 				"ms-azuretools.vscode-docker"
 			]
@@ -55,10 +55,6 @@
 		"ghcr.io/devcontainers/features/python:1": {
 			"version": "3.11",
             "installJupyterlab": true
-		},
-        "ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {
-            "version": "latest"
-        }
+		}
 	}
-
 }
