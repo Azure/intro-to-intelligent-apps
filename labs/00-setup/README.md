@@ -10,11 +10,11 @@ During these labs, we'll make use of a *Completions* model and an *Embeddings* m
 
 Someone may have already set these up for you to use, however if you need to deploy your own you can follow these instructions.
 
-1. Check if you already have an Azure OpenAI service deployed. Go to the Azure Portal and in the top search bar, enter `openai`. You'll then see **Azure OpenAI** listed under **Services**.  Click on **Azure OpenAI** to see all deployed services.
+1. Check if you already have an Azure OpenAI Service deployed. Go to the Azure Portal and in the top search bar, enter `openai`. You'll then see **Azure OpenAI** listed under **Services**.  Click on **Azure OpenAI** to see all deployed services.
 
 ![Alt text](images/search-openai.png)
 
-On the next page, you should see a list of deployed services. If you have one and are able to access it, click on it. Otherwise, click the **+ Create** button at the top of the page to create a new Azure OpenAI service.
+On the next page, you should see a list of deployed services. If you have one and are able to access it, click on it. Otherwise, click the **+ Create** button at the top of the page to create a new Azure OpenAI Service.
 
 ![Alt text](images/openai-service-list.png)
 
@@ -39,11 +39,11 @@ You can see above that we have a *completions* model `gpt-35-turbo` with version
 Make a note of both the **deployment name** and the **model name** for each of the two deployments.
 
 ## Environment Configuration
-We need to update a configuration file in this repo so that the labs are able to make use of your Azure OpenAI service. In the root of this repository, you will see a file named `env.example`. Make a copy of this file in the same location (the root of the repository) and rename the file to `.env` (don't forget the period at the beginning of the filename!)
+We need to update a configuration file in this repo so that the labs are able to make use of your Azure OpenAI Service. In the root of this repository, you will see a file named `env.example`. Make a copy of this file in the same location (the root of the repository) and rename the file to `.env` (don't forget the period at the beginning of the filename!)
 
 Here's a detailed list of what you need to enter into the `.env` file and where to find the information you need to supply.
 
-OPTIONAL: The `OPENAI_API_TYPE` value can be set to one of two values, depending on how you plan to authenticate to the Azure OpenAI service. To use an API key, set this to `azure` (default). To use Azure AD authentication, set this to `azure_ad` (currently not supported by this lab)
+OPTIONAL: The `OPENAI_API_TYPE` value can be set to one of two values, depending on how you plan to authenticate to the Azure OpenAI Service. To use an API key, set this to `azure` (default). To use Azure AD authentication, set this to `azure_ad` (currently not supported by this lab)
 
 ```
 OPENAI_API_TYPE = "azure"
@@ -75,7 +75,7 @@ The `OPENAI_API_VERSION` is used for the Azure OpenAI API to determine which ver
 OPENAI_API_VERSION = "2023-09-01-preview"
 ```
 
-The next sections all relate to the models you have deployed in the Azure OpenAI service.
+The next sections all relate to the models you have deployed in the Azure OpenAI Service.
 
 First is `AZURE_OPENAI_COMPLETION_MODEL`. This is the name of the **completions model**. It's likely to be `gpt-35-turbo`, but if you're using a different completions model, provide the name of the model here.
 
@@ -87,7 +87,7 @@ Note for this value, it's the name of the **model**, NOT the name of the **deplo
 AZURE_OPENAI_COMPLETION_MODEL = "gpt-35-turbo"
 ```
 
-The next two items are the **deployments** you have created using the Azure OpenAI service. First is the name of the deployment for the completions model and can be found in the **Deployment name** column of the **Deployments** page in Azure AI Studio.
+The next two items are the **deployments** you have created using the Azure OpenAI Service. First is the name of the deployment for the completions model and can be found in the **Deployment name** column of the **Deployments** page in Azure AI Studio.
 
 ![Alt text](images/completion-deployment.png)
 
