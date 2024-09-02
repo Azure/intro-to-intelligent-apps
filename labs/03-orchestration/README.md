@@ -20,28 +20,18 @@ In this lab, we'll walk through the basics of creating Vectors using Embeddings 
 
 [Qdrant](https://github.com/Azure/intro-to-intelligent-apps/blob/main/labs/03-orchestration/03-VectorStore/qdrant.ipynb )
 
-In this lab, we'll walk through using an open source vector store called Qdrant.
+In this lab, we'll walk through using an open source vector store called Qdrant to understand the basics.
 
 [Mongo](https://github.com/Azure/intro-to-intelligent-apps/blob/main/labs/03-orchestration/03-VectorStore/mongo.ipynb)
 
 In this lab, we'll use Azure CosmosDB for MongoDB (vCore) as a vector store and as a semantic cache. 
 
-## 04-AI Search
+[AI Search](https://github.com/Azure/intro-to-intelligent-apps/blob/main/labs/03-orchestration/03-VectorStore/aisearch.ipynb)
 
-[Azure AI Search + Semantic Kernel C#](04-ACS/acs-sk-csharp.ipynb)
-[Azure AI Search + Semantic Kernel Python](04-ACS/acs-sk-python.ipynb)
-[Azure AI Search + Langchain Python](04-ACS/acs-lc-python.ipynb)
+In this lab, we'll walk through Azure AI Search vector store and search ranking capabilities. 
 
-In this lab, we'll walk through using one of Azure's vector stores, **Azure AI Search**.
+## 04-Functions
 
-## 05-Functions
-
-[Function calling](05-Functions/function-calling.ipynb)
+[Function calling](04-Functions/function-calling.ipynb)
 
 In this lab, we'll walk through integrating external APIs into your chain.
-
-## 06-Conversations
-
-[Conversations](06-Conversations/chat-conversation.ipynb)
-
-In this lab, we'll walk through persisting your chat history in **Azure Cosmos DB for MongoDB (vCore)**.

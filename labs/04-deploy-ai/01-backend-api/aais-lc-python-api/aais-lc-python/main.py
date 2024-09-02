@@ -5,14 +5,15 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 from pydantic import BaseModel
 from fastapi.responses import JSONResponse, HTMLResponse
-from langchain.prompts import PromptTemplate
+from langchain.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate, PromptTemplate, MessagesPlaceholder
+from langchain_core.messages import SystemMessage, HumanMessage
 from azure.search.documents import SearchClient
 from azure.search.documents.models import VectorizedQuery
 from azure.core.credentials import AzureKeyCredential
 from langchain.chains import LLMChain
 from langchain_core.output_parsers import StrOutputParser
 
-logging.basicConfig(format='%(levelname)-10s%(message)s', level=logging.INFO)
+logging.basicConfig(format='%(levelname)-10s%(message)s', level=logging.DEBUG)
 
 # Load environment variables
 if load_dotenv():
@@ -20,6 +21,8 @@ if load_dotenv():
     logging.info("Azure AI Search: " + os.getenv("AZURE_AI_SEARCH_SERVICE_NAME"))
 else: 
     print("No file .env found")
+
+logging.info("Using Azure OpenAI Endpoint: " + os.getenv("AZURE_OPENAI_ENDPOINT"))
 
 azure_openai_api_key = os.getenv("AZURE_OPENAI_API_KEY")
 azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
@@ -64,15 +67,26 @@ def execute_completion(request: CompletionRequest):
     # request: CompletionRequest
     
     # Create a prompt template with variables, note the curly braces
-    prompt = PromptTemplate(
-        input_variables=["original_question","search_results"],
-        template="""
-        Question: {original_question}
 
-        Do not use any other data.
-        Only use the movie data below when responding.
-        {search_results}
-        """,
+    system_message_template = """
+    You are a support agent helping provide answers to software developers questions.
+    Use the following context to answer questions, do not use any other data.
+    If you need more information, ask the user for more details.
+    If you don't know the answer, let the user know.
+
+    {context}
+    """
+
+    human_message_template = "{question}"
+
+    prompt = ChatPromptTemplate.from_messages(
+        [
+            (
+                "system", system_message_template,
+
+            ),
+            MessagesPlaceholder(variable_name="question"),
+        ]
     )
 
     # Search Vector Store
@@ -94,8 +108,10 @@ def execute_completion(request: CompletionRequest):
         top=5
     ))
 
+
+
     output_parser = StrOutputParser()
     chain = prompt | azure_openai | output_parser
-    response = chain.invoke({"original_question": request.Question, "search_results": results})
+    response = chain.invoke({"context": results, "question": request.Question, })
     logging.info("Response from LLM: " + response)
     return CompletionResponse(completion = response)

@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+    chainlitagent-ui:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 8000:8000
+        environment:
+            - BACKEND_API_BASE=http://aais-lc-python:5291
+
+    aais-lc-python:
+        build:
+            context: ../../01-backend-api/aais-lc-python-api/aais-lc-python
+            dockerfile: Dockerfile
+        ports:
+            - 5291:5291
+        environment:
+            - AZURE_OPENAI_API_KEY='key_goes_here'
+            - AZURE_OPENAI_ENDPOINT=azure_open_ai_endpoint_goes_here
+            - OPENAI_API_VERSION=2024-03-01-preview
+            - AZURE_OPENAI_COMPLETION_DEPLOYMENT_NAME=gpt-35-turbo
+            - AZURE_OPENAI_EMBEDDING_MODEL=text-embedding-ada-002
+            - AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME=text-embedding-ada-002
+            - AZURE_AI_SEARCH_SERVICE_NAME=azure_ai_search_service_name_goes_here
+            - AZURE_AI_SEARCH_ENDPOINT=azure_ai_search_endpoint_goes_here
+            - AZURE_AI_SEARCH_INDEX_NAME=ai-search-index-name_goes_here
+            - AZURE_AI_SEARCH_API_KEY=azure_ai_search_api_key_goes_here
