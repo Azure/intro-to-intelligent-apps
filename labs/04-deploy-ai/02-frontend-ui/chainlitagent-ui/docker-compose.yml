@@ -26,3 +26,4 @@ services:
             - AZURE_AI_SEARCH_ENDPOINT=azure_ai_search_endpoint_goes_here
             - AZURE_AI_SEARCH_INDEX_NAME=ai-search-index-name_goes_here
             - AZURE_AI_SEARCH_API_KEY=azure_ai_search_api_key_goes_here
+
