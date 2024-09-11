@@ -414,4 +414,4 @@ solutions/AzureOpenAIUtil/
 
 # Qdrant
 .lock
-labs/03-orchestration/03-Qdrant/qdrantstorage/**
+labs/03-orchestration/03-VectorStore/qdrantstorage/**
