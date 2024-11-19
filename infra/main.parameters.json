@@ -1,0 +1,31 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "environmentName": {
+        "value": "${AZURE_ENV_NAME}"
+      },
+      "location": {
+        "value": "${AZURE_LOCATION}"
+      },
+      "openAIServiceId": {
+        "value": "${OAI_SERVICE_ID}"
+      },
+      "openAIDeploymentId": {
+        "value": "${OAI_DEPLOYMENT_ID}"
+      },
+      "openAIEmbeddingId": {
+        "value": "${OAI_EMBEDDING_ID}"
+      },
+      "openAIEndpoint": {
+        "value": "${OAI_ENDPOINT}"
+      },
+      "openAIKey": {
+        "value": "${OAI_KEY}"
+      },
+      "backend": {
+        "value": "${BACKEND_LANGUAGE}"
+      }
+    }
+  }
+  

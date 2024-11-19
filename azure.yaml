@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+name: intro-intelligent-apps
+services:
+  frontend:
+    project: ./labs/04-deploy-ai/02-frontend-ui/chainlitagent-ui
+    language: python
+    host: containerapp
+  api-python:
+    project: ./labs/04-deploy-ai/01-backend-api/acs-lc-python-api/acs-lc-python
+    language: python
+    host: containerapp
+  api-csharp:
+    project: ./labs/04-deploy-ai/01-backend-api/acs-sk-csharp-api/acs-sk-csharp
+    language: csharp
+    host: containerapp
